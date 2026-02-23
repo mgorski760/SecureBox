@@ -6,14 +6,27 @@ import {useState} from 'react'
 function Login(){
 
     const [isPasswordShown, setIsPasswordShown] = useState(false)
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState('')
+    const [success, setSuccess] = useState('')
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        setError('')
+        setSuccess('')
+        
+        
+    }
 
     return (
         <>
             <div className="min-h-screen bg-gray-900 flex items-center justify-center margin-b-300">
-                <div className='w-96 text-white   border-gray-600 p-10 flex flex-col gap-2'>
+                <form onSubmit={handleSubmit} className='w-96 text-white   border-gray-600 p-10 flex flex-col gap-5'>
                     <h1 className ='text-3xl text-center text-white'>Login to SecureBox</h1>
                     
-                    <input id="username-input" type="text" placeholder='Username' className="transition-colors border rounded-sm bg-gray-950 text-white p-2 border-gray-500 focus:border-blue-500 focus:outline-none"></input>
+                    <input id="email-input" type="text" placeholder='Username' className="transition-colors border rounded-sm bg-gray-950 text-white p-2 border-gray-500 focus:border-blue-500 focus:outline-none"></input>
                      
                     <div className="relative">
                         <input 
@@ -27,14 +40,11 @@ function Login(){
                         </button>
                     </div>
                     
-                    <button type="button" className='transition-colors rounded-2xl border bg-green-600 p-1 border-green-900 cursor-pointer hover:bg-green-500 my-4'>Login</button>
+                    <button type="submit" className='transition-colors rounded-2xl border bg-green-600 p-1 border-green-900 cursor-pointer hover:bg-green-500 my-4'>Login</button>
                     
-                    <div className="flex items-center gap-2">
-                        <hr className="flex-1 border-t border-gray-500" />
-                        <span className="text-gray-500 text-sm">Or Login With:</span>
-                        <hr className="flex-1 border-t border-gray-500" />
-                        </div>
-                </div>
+                    {error && <p className="text-red-500 text-center">{error}</p>}
+                    {success && <p className="text-green-500 text-center">{success}</p>}
+                </form>
             </div>
         </>
     )
