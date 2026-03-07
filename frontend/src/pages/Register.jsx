@@ -1,4 +1,3 @@
-import {BrowserRouter} from 'react-router-dom'
 import {EyeIcon, EyeClosedIcon} from '@primer/octicons-react'
 import {useState} from 'react'
 
@@ -69,7 +68,7 @@ function Register(){
 
     return (
         <>
-            <div className="min-h-screen bg-gray-900 flex items-center justify-center margin-b-300">
+            <div className="min-h-screen bg-black flex items-center justify-center margin-b-300">
                 <form onSubmit={handleSubmit} className='w-96 text-white   border-gray-600 p-10 flex flex-col gap-5'>
                     <h1 className ='text-3xl text-center text-white'>Sign Up to SecureBox</h1>
                     
@@ -79,7 +78,7 @@ function Register(){
                         placeholder='Email' 
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="transition-colors border rounded-sm bg-gray-950 text-white p-2 border-gray-500 focus:border-blue-500 focus:outline-none"
+                        className="transition-colors border rounded-sm bg-black text-white p-2 border-gray-500 focus:border-blue-500 focus:outline-none"
                     />
 
                     {/* Password input with see pwd button */}
@@ -90,7 +89,7 @@ function Register(){
                             placeholder='Password'
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="w-full transition-colors border rounded-sm bg-gray-950 text-white p-2 border-gray-500  focus:border-blue-500 focus:outline-none">
+                            className="w-full transition-colors border rounded-sm bg-black text-white p-2 border-gray-500  focus:border-blue-500 focus:outline-none">
                         </input>
                         <button 
                             type="button" 
@@ -106,10 +105,10 @@ function Register(){
                         placeholder='Confirm Password'
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
-                        className="w-full transition-colors border rounded-sm bg-gray-950 text-white p-2 border-gray-500  focus:border-blue-500 focus:outline-none">
+                        className="w-full transition-colors border rounded-sm bg-black text-white p-2 border-gray-500  focus:border-blue-500 focus:outline-none">
                     </input>
 
-                    <button type="submit" className='transition-colors rounded-2xl border bg-green-600 p-1 border-green-900 cursor-pointer hover:bg-green-500 my-4'>Register</button>
+                    <button type="submit" className='transition-colors rounded-2xl border bg-none text-white p-1 border-gray-500 cursor-pointer hover:bg-gray-800 my-4'>Register</button>
                     
                     {error && <p className="text-red-500 text-center">{error}</p>}
                     {success && <p className="text-green-500 text-center">{success}</p>}
