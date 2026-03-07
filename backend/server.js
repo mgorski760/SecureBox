@@ -56,8 +56,6 @@ async function run() {
 run().catch(console.dir);
 
 app.post('/api/register', async (req, res) => {
-
-  console.log("Register API call.")
     
   try{
     const {email, password} = req.body;
@@ -93,6 +91,7 @@ app.post('/api/login', async (req, res) => {
   try{
     const {email, password} = req.body;
 
+    //Pull the user from the Database.
     const existingUser = await db.collection('users').findOne({
       $or: [{email}]
     });
@@ -121,6 +120,8 @@ app.post('/api/login', async (req, res) => {
     res.status(500).json({ error: 'Server error. Failed to login user.'})
   }
 })
+
+
 
 
 
